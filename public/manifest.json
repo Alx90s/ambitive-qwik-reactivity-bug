@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "ambitive-starter-kit",
+  "short_name": "Welcome to Ambitive Starter Kit",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A Ambitive Website Project => www.ambitive.de."
+}
