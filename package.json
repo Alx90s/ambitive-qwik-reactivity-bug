@@ -19,9 +19,7 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik",
-    "init-ambitive-cms": "git submodule add --force  https://ambitivede:V9U4Hk65qcKNspCCGzJtJSNahX9sXwme@api.ambitive.de/plesk-git/ambitive-cms.git ambitive-cms; git submodule update --remote ambitive-cms; cp -r ./ambitive-cms/* ./",
-    "update-repo-url": "node update-repo-url.js"
+    "qwik": "qwik"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.20.0",
