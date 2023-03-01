@@ -1,20 +1,15 @@
 import { ChevronLeftIcon, HomeIcon, PlusIcon } from "qwik-feather-icons";
 
-import { loader$ } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
 
-import {
-  $,
-  component$,
-  useBrowserVisibleTask$,
-  useSignal,
-  useStore,
-} from "@builder.io/qwik";
+import { $, component$, useSignal, useStore } from "@builder.io/qwik";
 
 import ComponentModal from "~/components/cms/ComponentModal";
 import { getConfigLoader } from "~/routes/layout";
 import TestRender from "~/Theme/TestRender";
+import ComponentRenderer from "~/Theme/ComponentRenderer";
 
-export const getPageLoader = loader$(async () => {
+export const getPageLoader = routeLoader$(async () => {
   return {
     Title: "Pagetitle",
     URL: "/title",
@@ -59,7 +54,7 @@ export default component$(() => {
     array.splice(to, 0, array.splice(from, 1)[0]);
   });
 
-  useBrowserVisibleTask$(({ track }) => {
+  /* useBrowserVisibleTask$(({ track }) => {
     function handleDragStart(e) {
       source.value = parseInt(this.getAttribute("data-attr-key"));
       e.dataTransfer.effectAllowed = "move";
@@ -121,7 +116,7 @@ export default component$(() => {
       );
       [].forEach.call(cols, addDnDHandlers);
     }
-  });
+  }); */
 
   return (
     <div id="SitebuilderPage">
@@ -240,6 +235,7 @@ export default component$(() => {
             </p>
             <div class="mx-auto w-max">
               <TestRender components={pageD.data.Components} />
+              <ComponentRenderer components={pageD.data.Components} />
             </div>
           </div>
         </main>

@@ -5,6 +5,7 @@ import {
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
+import { AdminContextProvider } from "./context/AdminContext";
 import "./global.css";
 
 export default component$(() => {
@@ -24,8 +25,9 @@ export default component$(() => {
       </head>
 
       <body lang="de">
-        <RouterOutlet />
-
+        <AdminContextProvider>
+          <RouterOutlet />
+        </AdminContextProvider>
         <ServiceWorkerRegister />
       </body>
     </QwikCityProvider>
